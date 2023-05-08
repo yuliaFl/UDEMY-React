@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
+
+import './index.css';
 
 const BookList = () => {
   return (
-    <section>
+    <section className='bookList'>
       <Book/>
     </section>
   );
@@ -13,7 +13,7 @@ const BookList = () => {
 
 const Book = () => {
   return (
-    <article>
+    <article className='book'>
       <Image />
       <Title />
       <Author />
