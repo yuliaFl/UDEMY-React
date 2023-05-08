@@ -12,20 +12,29 @@ const BookList = () => {
 };
 
 const Book = () => {
+  const title = 'Nice to me';
   return (
     <article className='book'>
-      <Image />
-      <Title />
-      <Author />
+      <img src ="./images/NiceToMe.jpeg" alt="Nice to me"/>
+      <h2> {title} </h2>
+      <h4>Olga Primachenko</h4>
     </article>
   );
 };
 
-const Image = () => (<img src ="https://m.media-amazon.com/images/I/81Tok7I+3wL._AC_UL400_.jpg" alt="A Good Girl's Guide to Murder"/>);
-const Title = () => <h2> A Good Girl's Guide to Murder</h2>;
+/*
+const Image = () => (<img src ="./images/NiceToMe.jpeg" alt="Nice to me"/>);
+const Title = () => <h2> Nice to me</h2>;
 const Author = () => {
-  return <h4>Holly Jackson</h4>;
+  const inlineHeadingStyles = {
+    color:'#617d98',
+    fontSize:'0.75rem',
+    marginTop:"0.5rem",
+  };
+    return <h4 style={inlineHeadingStyles}
+  return <h4 style={{color:'#617d98',  fontSize:'0.75rem', marginTop:'0.5rem'}}>Olga Primachenko</h4>;
 };
+*/
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<BookList/>
