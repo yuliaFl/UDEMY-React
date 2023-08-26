@@ -1,41 +1,47 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "./index.css";
 
-import './index.css';
+const firstbook = {
+  author: "Marie Kondo",
+  title: "The life-changing magic of tidying up",
+  img: "./images/cleaningBook.jpg",
+};
+const secondbook = {
+  author: "Katerina Lengold",
+  title: "Prosto Kosmos",
+  img: "./images/prostoKosmos.jpg",
+};
 
 const BookList = () => {
   return (
-    <section className='bookList'>
-      <Book/>
-    </section>
+    <view>
+      <h1>My library</h1>
+      <section className="bookList">
+        <Book
+          author={firstbook.author}
+          title={firstbook.title}
+          img={firstbook.img}
+        />
+        <Book
+          author={secondbook.author}
+          title={secondbook.title}
+          img={secondbook.img}
+        />
+      </section>
+    </view>
   );
 };
 
-const Book = () => {
-  const title = 'Nice to me';
+const Book = (props) => {
   return (
-    <article className='book'>
-      <img src ="./images/NiceToMe.jpeg" alt="Nice to me"/>
-      <h2> {title} </h2>
-      <h4>Olga Primachenko</h4>
+    <article className="book">
+      <img src={props.img} alt={props.title} />
+      <h2> {props.title} </h2>
+      <h4>{props.author}</h4>
     </article>
   );
 };
 
-/*
-const Image = () => (<img src ="./images/NiceToMe.jpeg" alt="Nice to me"/>);
-const Title = () => <h2> Nice to me</h2>;
-const Author = () => {
-  const inlineHeadingStyles = {
-    color:'#617d98',
-    fontSize:'0.75rem',
-    marginTop:"0.5rem",
-  };
-    return <h4 style={inlineHeadingStyles}
-  return <h4 style={{color:'#617d98',  fontSize:'0.75rem', marginTop:'0.5rem'}}>Olga Primachenko</h4>;
-};
-*/
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<BookList/>
-);
+root.render(<BookList />);
